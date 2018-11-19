@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProjectAndroid</string>
+    <string name="screen_cast_text">Osaka 2154.&#xA;  Les humains sont devenus “immortels” grâce à une nouvelle technologie aliens, qui permet de permuter de corps tout en conservant son esprit dans ce qu’on appelle une “Stack”.&#xA; Le clonage est légion et désormais on change de corps comme on change de chemise…&#xA;  Mais pour la première fois depuis 91 ans, une personne a été tué “définitivement”. Le coupable a fait en sorte de détruire la “Satck” de la victime et d’effacer toutes ses sauvegardes ! &#xA; L’archange de la justice Tyraël vient de mandater le détective Takechi Kovach pour une enquête dans le manoir Fukubashi, situé dans la province de Ginzo.&#xA; Les suspects potentiels y sont présents à vous de découvrir ce qu’il s’est passé et de retrouver le ou les coupables de cette machination…</string>
+    <string name="skip">Skip</string>
+    <string name="play">Play</string>
+    <string name="continu">Continue</string>
+    <string name="quit">Quit</string>
+</resources>
