@@ -1,4 +1,4 @@
-package com.leothos.projectandroid;
+package com.leothos.projectandroid.controlers.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+
+import com.leothos.projectandroid.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,12 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mButtonSkip = (CardView) findViewById(R.id.button_skip_layout);
         mTextView = (TextView) findViewById(R.id.screen_splash_text);
         //Methods
-        mButtonSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startMenuActivity();
-            }
-        });
+        mButtonSkip.setOnClickListener(v -> startMenuActivity());
     }
 
     private void animateTextView() {
@@ -46,17 +43,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void startMenuAutomatically() {
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startMenuActivity();
-            }
-        }, 20000);
+        handler.postDelayed(() -> startMenuActivity(), 20000);
     }
 
     private void startMenuActivity() {
         Intent intent = new Intent(MainActivity.this, MenuActivity.class);
         this.startActivity(intent);
+        finish();
     }
 
 }
