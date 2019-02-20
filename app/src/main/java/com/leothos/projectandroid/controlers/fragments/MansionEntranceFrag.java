@@ -21,14 +21,14 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MansionEntrance extends Fragment {
+public class MansionEntranceFrag extends Fragment {
 
     @BindView(R.id.open_entrance_hall)
     Button mDoorEntrance;
-    private MansionHall mHallFragment = new MansionHall();
-    private MansionEntrance mMansionEntrance;
+    private MansionHallFrag mHallFragment = new MansionHallFrag();
+    private MansionEntranceFrag mMansionEntranceFrag;
 
-    public MansionEntrance() {
+    public MansionEntranceFrag() {
         // Required empty public constructor
     }
 
@@ -53,14 +53,13 @@ public class MansionEntrance extends Fragment {
      * clicking on the door
      */
     private void configureAndShowMansionHallFragment() {
-        mHallFragment = (MansionHall) Objects.requireNonNull(getActivity()).getSupportFragmentManager()
+        mHallFragment = (MansionHallFrag) Objects.requireNonNull(getActivity()).getSupportFragmentManager()
                 .findFragmentById(R.id.fragment_hall_id);
 
         if (mHallFragment == null) {
-            mHallFragment = new MansionHall();
+            mHallFragment = new MansionHallFrag();
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_hall_id, mHallFragment, "NewFragTag")
-                    .addToBackStack(null)
                     .commit();
         }
 
@@ -72,12 +71,12 @@ public class MansionEntrance extends Fragment {
 
     private void destroyPreviousFrag() {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        mMansionEntrance = (MansionEntrance) Objects.requireNonNull(getActivity()).getSupportFragmentManager()
+        mMansionEntranceFrag = (MansionEntranceFrag) Objects.requireNonNull(getActivity()).getSupportFragmentManager()
                 .findFragmentById(R.id.fragment_entrance_id);
-        if (mMansionEntrance != null) {
+        if (mMansionEntranceFrag != null) {
             FragmentTransaction fragmentTransaction =
                     fragmentManager.beginTransaction();
-            fragmentTransaction.remove(mMansionEntrance).commit();
+            fragmentTransaction.remove(mMansionEntranceFrag).commit();
         }
     }
 

@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controlers.fragments.MansionEntrance">
+    tools:context=".controlers.fragments.MansionEntranceFrag">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
         android:src="@drawable/mansion_front" />
 
     <Button

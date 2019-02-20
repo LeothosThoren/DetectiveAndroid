@@ -13,10 +13,10 @@ import com.leothos.projectandroid.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MansionHall extends Fragment {
+public class MansionHallFrag extends Fragment {
 
 
-    public MansionHall() {
+    public MansionHallFrag() {
         // Required empty public constructor
     }
 
