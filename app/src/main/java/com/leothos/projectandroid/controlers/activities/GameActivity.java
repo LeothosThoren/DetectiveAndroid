@@ -55,4 +55,8 @@ public class GameActivity extends AppCompatActivity {
         dialogFragment.show(getSupportFragmentManager(), "MyCustomDialog");
     }
 
+    @Override
+    public void onBackPressed() {
+        openOptionMenu();
+    }
 }
