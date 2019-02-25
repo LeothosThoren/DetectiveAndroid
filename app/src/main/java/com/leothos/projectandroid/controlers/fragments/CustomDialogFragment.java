@@ -41,7 +41,6 @@ public class CustomDialogFragment extends DialogFragment implements View.OnClick
         mExitButton.setOnClickListener(this);
         return view;
 
-
     }
 
     @Override
@@ -59,6 +58,5 @@ public class CustomDialogFragment extends DialogFragment implements View.OnClick
                 break;
         }
     }
-
 
 }
