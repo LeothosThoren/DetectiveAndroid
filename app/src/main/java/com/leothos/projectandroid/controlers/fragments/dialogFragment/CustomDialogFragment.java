@@ -1,4 +1,4 @@
-package com.leothos.projectandroid.controlers.fragments;
+package com.leothos.projectandroid.controlers.fragments.dialogFragment;
 
 
 import android.os.Bundle;

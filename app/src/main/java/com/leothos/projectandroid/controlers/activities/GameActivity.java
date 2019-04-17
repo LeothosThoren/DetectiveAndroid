@@ -1,51 +1,49 @@
 package com.leothos.projectandroid.controlers.activities;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
+import android.support.v4.app.Fragment;
 
 import com.leothos.projectandroid.R;
-import com.leothos.projectandroid.controlers.fragments.CustomDialogFragment;
-import com.leothos.projectandroid.controlers.fragments.MansionEntranceFrag;
+import com.leothos.projectandroid.controlers.fragments.FragEntrance;
+import com.leothos.projectandroid.controlers.fragments.dialogFragment.CustomDialogFragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-public class GameActivity extends AppCompatActivity {
-
-    //Widget
-    @BindView(R.id.option_button)
-    CardView mCardViewOptionButton;
+public class GameActivity extends BaseActivity {
 
     //var
-    private MansionEntranceFrag mEntranceFragment;
+    private FragEntrance mFragEntrance;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_game);
-        ButterKnife.bind(this);
-
-        //handle the click to show the right fragment
-        this.configureAndShowMansionEntranceFragment();
-        this.mCardViewOptionButton.setOnClickListener(v -> openOptionMenu());
-
+    protected int getActivityLayout() {
+        return R.layout.activity_main_game;
     }
 
+    @Override
+    protected void configureActivity() {
+        configureFragChange();
+    }
+
+
+    //============================
+    // Fragment methods
+    //============================
 
     /**
      * Configure and build a fragment inside a single activity in order to show the entrance of the mansion
      * the door is clickable
      */
-    private void configureAndShowMansionEntranceFragment() {
-        mEntranceFragment = (MansionEntranceFrag) getSupportFragmentManager().findFragmentById(R.id.fragment_entrance_id);
-        if (mEntranceFragment == null) {
-            mEntranceFragment = new MansionEntranceFrag();
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_entrance_id, mEntranceFragment)
-                    .commit();
-        }
+    private void configureFragChange() {
+
+        if (mFragEntrance == null) mFragEntrance = FragEntrance.newInstance();
+        displayFragment(mFragEntrance);
     }
+
+    protected void displayFragment(Fragment fragment) {
+        if (!fragment.isVisible())
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_id, fragment).commit();
+    }
+
+    //==========================
+    // Menu handler
+    //==========================
 
     /**
      * The idea is to open a menu from every stage of the game
@@ -59,4 +57,5 @@ public class GameActivity extends AppCompatActivity {
     public void onBackPressed() {
         openOptionMenu();
     }
+
 }

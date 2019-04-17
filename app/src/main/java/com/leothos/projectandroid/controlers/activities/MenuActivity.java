@@ -1,8 +1,6 @@
 package com.leothos.projectandroid.controlers.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -10,9 +8,8 @@ import android.widget.Toast;
 import com.leothos.projectandroid.R;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
+public class MenuActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.menu_play_button)
     Button mPlayButton;
@@ -21,11 +18,12 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-        ButterKnife.bind(this);
-        //Init
+    protected int getActivityLayout() {
+        return R.layout.activity_menu;
+    }
+
+    @Override
+    protected void configureActivity() {
         this.init();
     }
 

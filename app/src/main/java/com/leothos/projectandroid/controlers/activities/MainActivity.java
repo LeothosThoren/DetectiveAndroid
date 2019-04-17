@@ -1,31 +1,30 @@
 package com.leothos.projectandroid.controlers.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.leothos.projectandroid.R;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
 
-    private CardView mButtonSkip;
-    private TextView mTextView;
+public class MainActivity extends BaseActivity {
+
+    @BindView(R.id.button_skip_layout)
+    CardView mButtonSkip;
+    @BindView(R.id.screen_splash_text)
+    TextView mTextView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getActivityLayout() {
+        return R.layout.activity_main;
+    }
 
-        //Initialisation
-        mButtonSkip = (CardView) findViewById(R.id.button_skip_layout);
-        mTextView = (TextView) findViewById(R.id.screen_splash_text);
-        //Methods
+    @Override
+    protected void configureActivity() {
         mButtonSkip.setOnClickListener(v -> startMenuActivity());
     }
 
@@ -43,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startMenuAutomatically() {
         Handler handler = new Handler();
-        handler.postDelayed(() -> startMenuActivity(), 20000);
+        handler.postDelayed(this::startMenuActivity, 20000);
     }
 
     private void startMenuActivity() {
