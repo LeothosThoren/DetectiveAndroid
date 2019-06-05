@@ -38,14 +38,5 @@
         app:layout_constraintVertical_bias="0.918" />
 
 
-    <!-- Item -->
-    <ImageView
-        android:id="@+id/item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickItem"
-        android:src="@drawable/detectives"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

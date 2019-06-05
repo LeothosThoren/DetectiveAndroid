@@ -8,6 +8,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.leothos.projectandroid.R;
+import com.leothos.projectandroid.base.BaseActivity;
 
 import butterknife.BindView;
 

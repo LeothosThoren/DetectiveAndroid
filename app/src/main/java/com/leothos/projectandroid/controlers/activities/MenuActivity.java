@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.leothos.projectandroid.R;
+import com.leothos.projectandroid.base.BaseActivity;
 
 import butterknife.BindView;
 

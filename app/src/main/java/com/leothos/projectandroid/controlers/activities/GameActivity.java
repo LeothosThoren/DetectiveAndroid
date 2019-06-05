@@ -3,6 +3,7 @@ package com.leothos.projectandroid.controlers.activities;
 import android.support.v4.app.Fragment;
 
 import com.leothos.projectandroid.R;
+import com.leothos.projectandroid.base.BaseActivity;
 import com.leothos.projectandroid.controlers.fragments.FragEntrance;
 import com.leothos.projectandroid.controlers.fragments.dialogFragment.CustomDialogFragment;
 
