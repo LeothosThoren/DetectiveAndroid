@@ -2,10 +2,11 @@ package com.leothos.projectandroid.controlers.activities;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.widget.CardView;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+
+import androidx.cardview.widget.CardView;
 
 import com.leothos.projectandroid.R;
 import com.leothos.projectandroid.base.BaseActivity;

@@ -1,16 +1,13 @@
 package com.leothos.projectandroid.controlers.activities;
 
-import android.support.v4.app.Fragment;
-
 import com.leothos.projectandroid.R;
 import com.leothos.projectandroid.base.BaseActivity;
-import com.leothos.projectandroid.controlers.fragments.FragEntrance;
 import com.leothos.projectandroid.controlers.fragments.dialogFragment.CustomDialogFragment;
 
 public class GameActivity extends BaseActivity {
 
     //var
-    private FragEntrance mFragEntrance;
+    // private FragEntrance mFragEntrance;
 
     @Override
     protected int getActivityLayout() {
@@ -19,7 +16,7 @@ public class GameActivity extends BaseActivity {
 
     @Override
     protected void configureActivity() {
-        configureFragChange();
+        // configureFragChange();
     }
 
 
@@ -27,20 +24,6 @@ public class GameActivity extends BaseActivity {
     // Fragment methods
     //============================
 
-    /**
-     * Configure and build a fragment inside a single activity in order to show the entrance of the mansion
-     * the door is clickable
-     */
-    private void configureFragChange() {
-
-        if (mFragEntrance == null) mFragEntrance = FragEntrance.newInstance();
-        displayFragment(mFragEntrance);
-    }
-
-    protected void displayFragment(Fragment fragment) {
-        if (!fragment.isVisible())
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_id, fragment).commit();
-    }
 
     //==========================
     // Menu handler

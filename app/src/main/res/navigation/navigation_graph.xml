@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/fragEntrance">
+
+    <fragment
+        android:id="@+id/fragEntrance"
+        android:name="com.leothos.projectandroid.controlers.fragments.FragEntrance"
+        android:label="fragment_mansion_entrance"
+        tools:layout="@layout/fragment_mansion_entrance">
+        <action
+            android:id="@+id/action_fragEntrance_to_fragHall"
+            app:destination="@id/fragHall"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragHall"
+        android:name="com.leothos.projectandroid.controlers.fragments.FragHall"
+        android:label="fragment_mansion_hall"
+        tools:layout="@layout/fragment_mansion_hall">
+        <action
+            android:id="@+id/action_fragHall_to_fragKitchen"
+            app:destination="@id/fragKitchen"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_fragHall_to_fragLibrary"
+            app:destination="@id/fragLibrary"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragKitchen"
+        android:name="com.leothos.projectandroid.controlers.fragments.FragKitchen"
+        android:label="fragment_frag_kitchen"
+        tools:layout="@layout/fragment_frag_kitchen">
+        <action
+            android:id="@+id/action_fragKitchen_to_fragHall"
+            app:destination="@id/fragHall"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragLibrary"
+        android:name="com.leothos.projectandroid.controlers.fragments.FragLibrary"
+        android:label="fragment_frag_library"
+        tools:layout="@layout/fragment_frag_library">
+        <action
+            android:id="@+id/action_fragLibrary_to_fragHall"
+            app:destination="@id/fragHall"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+</navigation>

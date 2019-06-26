@@ -4,13 +4,12 @@ public class ItemObject {
     private String itemName;
     private String itemDescription;
     private int itemImage;
-    private boolean isVisible;
+    private int visibility;
 
-    public ItemObject(String itemName, String itemDescription, int itemImage, boolean isVisible) {
+    public ItemObject(String itemName, String itemDescription, int itemImage) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.itemImage = itemImage;
-        this.isVisible = isVisible;
     }
 
     public ItemObject() {
@@ -40,11 +39,12 @@ public class ItemObject {
         this.itemImage = itemImage;
     }
 
-    public boolean isVisible() {
-        return isVisible;
+    public int getVisibility() {
+        return visibility;
     }
 
-    public void setVisible(boolean visible) {
-        isVisible = visible;
+    public void setVisibility(int visibility) {
+        this.visibility = visibility;
     }
+
 }

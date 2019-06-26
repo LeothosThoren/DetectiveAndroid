@@ -1,10 +1,10 @@
 package com.leothos.projectandroid.controlers.fragments;
 
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.widget.Button;
+
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.leothos.projectandroid.R;
 import com.leothos.projectandroid.base.BaseFragment;
@@ -38,20 +38,9 @@ public class FragEntrance extends BaseFragment {
 
     @Override
     protected void updateFragment() {
-        mDoorEntrance.setOnClickListener(v -> configureHall());
+        mDoorEntrance.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_fragEntrance_to_fragHall));
     }
 
-    /**
-     * Configure and build a fragment inside a single activity in order to show the hall of the mansion after
-     * clicking on the door
-     */
-    private void configureHall() {
-        Fragment frag = new FragHall();
-        FragmentManager fm = getActivity().getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.fragment_id, frag);
-        ft.addToBackStack(null);
-        ft.commit();
-    }
+
 }
 
