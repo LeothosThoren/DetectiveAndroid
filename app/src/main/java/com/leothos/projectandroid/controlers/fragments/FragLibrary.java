@@ -39,6 +39,4 @@ public class FragLibrary extends BaseFragment {
         mFromLibraryToHall.setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.action_fragLibrary_to_fragHall));
     }
-
-
 }

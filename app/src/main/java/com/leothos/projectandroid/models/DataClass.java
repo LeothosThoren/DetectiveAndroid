@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class DataClass {
 
     private static final DataClass ourInstance = new DataClass();
-    public ArrayList<ItemObject> listOfItem = new ArrayList<>();
+    public ArrayList<ItemList> listOfItem = new ArrayList<>();
 
     private DataClass() {
     }

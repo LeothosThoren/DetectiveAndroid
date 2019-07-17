@@ -3,7 +3,6 @@ package com.leothos.projectandroid.controlers.fragments;
 
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -11,7 +10,7 @@ import androidx.navigation.Navigation;
 import com.leothos.projectandroid.R;
 import com.leothos.projectandroid.base.BaseFragment;
 import com.leothos.projectandroid.business_logic.ItemAction;
-import com.leothos.projectandroid.models.ItemObject;
+import com.leothos.projectandroid.models.ItemList;
 
 import butterknife.BindView;
 
@@ -28,11 +27,7 @@ public class FragHall extends BaseFragment implements ItemAction {
     @BindView(R.id.item_pistol)
     ImageView mPistolItem;
 
-    // Var
-    private ItemObject item = new ItemObject(
-            "Pistol",
-            "A gun found in the hall",
-            R.drawable.ic_pistol);
+
 
     @Override
     protected int getFragmentLayout() {
@@ -50,10 +45,11 @@ public class FragHall extends BaseFragment implements ItemAction {
         mLibraryButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_fragHall_to_fragLibrary));
 
         mPistolItem.setOnClickListener(v -> {
-            takeItem(item);
-            if (checkItem(item.getItemName())) {
-                Toast.makeText(getContext(), "Test ramassage + " + item.getItemName(), Toast.LENGTH_SHORT).show();
-            }
+            //TODO : Ajouter un menu au click pour afficher  si on veut prendre l'item ou pas
+            // si oui alors ajouter au sac et effacer l'objet de la vue sinon laisser la vue et ne rien faire dans le sac
+
+            takeItem(ItemList.PISTOL);
+
         });
 
 

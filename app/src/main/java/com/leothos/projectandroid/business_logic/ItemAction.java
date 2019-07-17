@@ -1,11 +1,13 @@
 package com.leothos.projectandroid.business_logic;
 
+import android.content.Context;
+
 import com.leothos.projectandroid.models.DataClass;
-import com.leothos.projectandroid.models.ItemObject;
+import com.leothos.projectandroid.models.ItemList;
 
 public interface ItemAction {
 
-    default void takeItem(ItemObject item) {
+    default void takeItem(ItemList item) {
         DataClass.getInstance().listOfItem.add(item);
     }
 
@@ -13,16 +15,21 @@ public interface ItemAction {
         DataClass.getInstance().listOfItem.remove(itemIndex);
     }
 
-    default ItemObject useItem(int itemIndex) {
+    default ItemList useItem(int itemIndex) {
         return DataClass.getInstance().listOfItem.get(itemIndex);
     }
 
-    default boolean checkItem(String name) {
-        for (ItemObject item : DataClass.getInstance().listOfItem) {
-            if (item.getItemName().contains(name)) {
+    default boolean checkItem(Context context, String name) {
+        for (ItemList item : DataClass.getInstance().listOfItem) {
+            if (transformIntResourceIntoString(context, item.getName()).contains(name)) {
                 return true;
             }
         }
         return false;
     }
+
+    default String transformIntResourceIntoString(Context context, int name) {
+        return context.getResources().getString(name);
+    }
+
 }

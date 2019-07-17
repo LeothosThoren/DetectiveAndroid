@@ -39,6 +39,4 @@ public class FragKitchen extends BaseFragment {
         // Go back to the hall
         mFromKitchenToHall.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_fragKitchen_to_fragHall));
     }
-
-
 }

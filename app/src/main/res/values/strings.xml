@@ -6,10 +6,24 @@
     <string name="continu">Continue</string>
     <string name="quit">Quit</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="map">MAP</string>
     <string name="items">ITEMS</string>
     <string name="exit">Exit</string>
     <string name="dialog_title">What do you want to do with this?</string>
+
+    <!-- ITEMS  -->
+    <string name="pistol_name">Pistol</string>
+    <string name="pistol_description">A gun in the middle of the hall </string>
+    <string name="flute_name">Flute</string>
+    <string name="flute_description">A nice music instrument with a strange smell…</string>
+    <string name="key_name">key</string>
+    <string name="key_description">This key allow to open a door but which one…</string>
+    <string name="soap_name">Soap</string>
+    <string name="soap_description">An authentic Marseille soap with a lavender scent</string>
+    <string name="hammer_name">Hammer</string>
+    <string name="hammer_description">A hammer! It seems to have been used many times!</string>
+    <string name="paper_name">Paper</string>
+    <string name="paper_description">There is something written on the paper like a number…</string>
+
 </resources>
